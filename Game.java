@@ -24,28 +24,31 @@ class Game {
         for (int i = 0; i < 3; i++) {
             if (cells[i] == 0)
                 s.append("| - ");
-            else if (cells[i] == 1)
-                s.append("| o ");
-            else
-                s.append("| x ");
+            else 
+                if (cells[i] == 1)
+                    s.append("| o ");
+                else
+                    s.append("| x ");
         }
         s.append("|\n");
         for (int i = 3; i < 6; i++) {
             if (cells[i] == 0)
                 s.append("| - ");
-            else if (cells[i] == 1)
-                s.append("| o ");
-            else
-                s.append("| x ");
+            else 
+                if (cells[i] == 1)
+                    s.append("| o ");
+                else
+                    s.append("| x ");
         }
         s.append("|\n");
         for (int i = 6; i < 9; i++) {
             if (cells[i] == 0)
                 s.append("| - ");
-            else if (cells[i] == 1)
-                s.append("| o ");
-            else
-                s.append("| x ");
+            else 
+                if (cells[i] == 1)
+                    s.append("| o ");
+                else
+                    s.append("| x ");
         }
         s.append("|\n");
         return s.toString();
@@ -53,7 +56,8 @@ class Game {
     public String player() {
         if (count % 2 == 0) {
             return name1;
-        } else {
+        } 
+        else {
             return name2;
         }
     }
@@ -68,25 +72,30 @@ class Game {
         if (y == 1) {
             if (x == 1)
                 pos = 0;
-            else if (x == 2)
-                pos = 3;
-            else
-                pos = 6;
-        } else {
+            else 
+                if (x == 2)
+                    pos = 3;
+                else
+                    pos = 6;
+        } 
+        else {
             if (y == 2) {
                 if (x == 1)
                     pos = 1;
-                else if (x == 2)
-                    pos = 4;
-                else
-                    pos = 7;
-            } else {
+                else 
+                    if (x == 2)
+                        pos = 4;
+                    else
+                        pos = 7;
+            } 
+            else {
                 if (x == 1)
                     pos = 2;
-                else if (x == 2)
-                    pos = 5;
-                else
-                    pos = 8;
+                else 
+                    if (x == 2)
+                        pos = 5;
+                    else
+                        pos = 8;
             }
         }
         if (cells[pos] != 0) {
@@ -94,7 +103,8 @@ class Game {
         }
         if (count % 2 == 0) {
             cells[pos] = 1;
-        } else {
+        } 
+        else {
             cells[pos] = -1;
         }
         count++;
