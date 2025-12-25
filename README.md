@@ -186,36 +186,17 @@ class Game {
         s.append(" - o\n");
         s.append(name2);
         s.append(" - x\n");
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 9; i++) {
             if (cells[i] == 0)
                 s.append("| - ");
             else
-                if (cells[i] == 1)
-                    s.append("| o ");
-                else
-                    s.append("| x ");
-        }
-        s.append("|\n");
-        for (int i = 3; i < 6; i++) {
-            if (cells[i] == 0)
-                s.append("| - ");
+            if (cells[i] == 1)
+                s.append("| o ");
             else
-                 if (cells[i] == 1)
-                     s.append("| o ");
-                 else
-                     s.append("| x ");
+                s.append("| x ");
+            if (i % 3 == 2)
+                s.append("|\n");
         }
-        s.append("|\n");
-        for (int i = 6; i < 9; i++) {
-            if (cells[i] == 0)
-                s.append("| - ");
-            else
-                if (cells[i] == 1)
-                    s.append("| o ");
-                else
-                    s.append("| x ");
-        }
-        s.append("|\n");
         return s.toString();
     }
     public String player() {
@@ -233,36 +214,7 @@ class Game {
         if (x < 1 || x > 3 || y < 1 || y > 3) {
             return "Введите числа от 1 до 3.";
         }
-        int pos;
-        if (y == 1) {
-            if (x == 1)
-                pos = 0;
-            else
-                if (x == 2)
-                    pos = 3;
-                else
-                    pos = 6;
-        }
-        else {
-            if (y == 2) {
-                if (x == 1)
-                    pos = 1;
-                else
-                    if (x == 2)
-                        pos = 4;
-                    else
-                        pos = 7;
-            }
-            else {
-                if (x == 1)
-                    pos = 2;
-                else
-                    if (x == 2)
-                        pos = 5;
-                    else
-                        pos = 8;
-            }
-        }
+        int pos = (x - 1) * 3 + (y - 1);
         if (cells[pos] != 0) {
             return "Клетка занята";
         }
@@ -305,16 +257,16 @@ class Game {
             System.out.println("Победитель: " + name1);
         }
         else
-            if (Winner(2)) {
+        if (Winner(2)) {
             System.out.println("Победитель: " + name2);
+        }
+        else {
+            if (isNoWin()) {
+                System.out.println("Ничья");
             }
             else {
-                if (isNoWin()) {
-                    System.out.println("Ничья");
-                }
-                else {
-                    System.out.println("Игра в процессе");
-                }
+                System.out.println("Игра в процессе");
+            }
         }
     }
 }
