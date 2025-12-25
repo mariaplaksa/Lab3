@@ -187,7 +187,7 @@ class Game {
         for (int i = 0; i < 3; i++) {
             if (cells[i] == 0)
                 s.append("| - ");
-            else 
+            else
                 if (cells[i] == 1)
                     s.append("| o ");
                 else
@@ -197,17 +197,17 @@ class Game {
         for (int i = 3; i < 6; i++) {
             if (cells[i] == 0)
                 s.append("| - ");
-            else 
-                if (cells[i] == 1)
+            else
+                 if (cells[i] == 1)
                     s.append("| o ");
                 else
-                    s.append("| x ");
+                     s.append("| x ");
         }
         s.append("|\n");
         for (int i = 6; i < 9; i++) {
             if (cells[i] == 0)
                 s.append("| - ");
-            else 
+            else
                 if (cells[i] == 1)
                     s.append("| o ");
                 else
@@ -219,7 +219,7 @@ class Game {
     public String player() {
         if (count % 2 == 0) {
             return name1;
-        } 
+        }
         else {
             return name2;
         }
@@ -235,26 +235,26 @@ class Game {
         if (y == 1) {
             if (x == 1)
                 pos = 0;
-            else 
+            else
                 if (x == 2)
                     pos = 3;
                 else
                     pos = 6;
-        } 
+        }
         else {
             if (y == 2) {
                 if (x == 1)
                     pos = 1;
-                else 
+                else
                     if (x == 2)
                         pos = 4;
                     else
                         pos = 7;
-            } 
+            }
             else {
                 if (x == 1)
                     pos = 2;
-                else 
+                else
                     if (x == 2)
                         pos = 5;
                     else
@@ -266,7 +266,7 @@ class Game {
         }
         if (count % 2 == 0) {
             cells[pos] = 1;
-        } 
+        }
         else {
             cells[pos] = -1;
         }
@@ -304,7 +304,7 @@ class Game {
         }
         else
             if (Winner(2)) {
-                System.out.println("Победитель: " + name2);
+            System.out.println("Победитель: " + name2);
             }
             else {
                 if (isNoWin()) {
@@ -313,7 +313,7 @@ class Game {
                 else {
                     System.out.println("Игра в процессе");
                 }
-            }
+        }
     }
 }
 ```
