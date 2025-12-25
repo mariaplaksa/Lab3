@@ -19,8 +19,10 @@ class Game {
     @Override
     public String toString() {
         StringBuilder s = new StringBuilder();
-        s.append(name1).append(" - o\n");
-        s.append(name2).append(" - x\n");
+        s.append(name1);
+        s.append(" - o\n");
+        s.append(name2);
+        s.append(" - x\n");
         for (int i = 0; i < 3; i++) {
             if (cells[i] == 0)
                 s.append("| - ");
@@ -36,8 +38,8 @@ class Game {
                 s.append("| - ");
             else
                  if (cells[i] == 1)
-                    s.append("| o ");
-                else
+                     s.append("| o ");
+                 else
                      s.append("| x ");
         }
         s.append("|\n");
